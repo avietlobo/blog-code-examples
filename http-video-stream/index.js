@@ -14,8 +14,8 @@ app.get("/video", function (req, res) {
   }
 
   // get video stats (about 61MB)
-  const videoPath = "bigbuck.mp4";
-  const videoSize = fs.statSync("bigbuck.mp4").size;
+  const videoPath = "ZionPisgahSecondAnniversaryVideo.mp4";
+  const videoSize = fs.statSync("ZionPisgahSecondAnniversaryVideo.mp4").size;
 
   // Parse Range
   // Example: "bytes=32324-"
@@ -42,6 +42,8 @@ app.get("/video", function (req, res) {
   videoStream.pipe(res);
 });
 
-app.listen(8000, function () {
+const PORT = process.env.PORT || 8000;
+
+app.listen(PORT, function () {
   console.log("Listening on port 8000!");
 });
